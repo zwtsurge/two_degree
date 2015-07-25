@@ -4,14 +4,53 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
+    private Button meBtn = null;
+    private Button twoDegreeBtn = null;
+    private Button dynamicBtn = null;
+    private Button informationBtn = null;
+    private TextView textView = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        meBtn = (Button)findViewById(R.id.meBtn);
+        twoDegreeBtn = (Button)findViewById(R.id.two_degreeBtn);
+        dynamicBtn = (Button)findViewById(R.id.dynamicBtn);
+        informationBtn = (Button)findViewById(R.id.informationBtn);
+        textView = (TextView)findViewById(R.id.testView);
+        meBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        twoDegreeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        dynamicBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        informationBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
     }
 
     @Override

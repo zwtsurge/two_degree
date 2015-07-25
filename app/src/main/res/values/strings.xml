@@ -1,6 +1,15 @@
 <resources>
     <string name="app_name">two_degree</string>
-
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="two_degree_button">二度</string>
+    <string name="information_button">消息</string>
+    <string name="dynamic_button">动态</string>
+    <string name="me_button">我</string>
+    <string name="two_degree_text">二度</string>
+    <string name="information_text">消息</string>
+    <string name="dynamic_text">动态</string>
+    <string name="me_text">我</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
