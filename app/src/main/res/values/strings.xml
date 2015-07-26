@@ -7,9 +7,9 @@
     <string name="information_button">消息</string>
     <string name="dynamic_button">动态</string>
     <string name="me_button">我</string>
-    <string name="two_degree_text">二度</string>
-    <string name="information_text">消息</string>
-    <string name="dynamic_text">动态</string>
-    <string name="me_text">我</string>
+    <string name="two_degree_text">这是二度列表</string>
+    <string name="information_text">这是消息列表</string>
+    <string name="dynamic_text">这是动态列表</string>
+    <string name="me_text">这是我列表</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

@@ -28,25 +28,41 @@ public class MainActivity extends ActionBarActivity {
         meBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                textView.setText(R.string.me_text);
+                meBtn.setTextColor(getResources().getColor(R.color.blue));
+                twoDegreeBtn.setTextColor(getResources().getColor(R.color.black));
+                dynamicBtn.setTextColor(getResources().getColor(R.color.black));
+                informationBtn.setTextColor(getResources().getColor(R.color.black));
             }
         });
         twoDegreeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                textView.setText(R.string.two_degree_text);
+                meBtn.setTextColor(getResources().getColor(R.color.black));
+                twoDegreeBtn.setTextColor(getResources().getColor(R.color.blue));
+                dynamicBtn.setTextColor(getResources().getColor(R.color.black));
+                informationBtn.setTextColor(getResources().getColor(R.color.black));
             }
         });
         dynamicBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                textView.setText(R.string.dynamic_text);
+                dynamicBtn.setTextColor(getResources().getColor(R.color.blue));
+                meBtn.setTextColor(getResources().getColor(R.color.black));
+                twoDegreeBtn.setTextColor(getResources().getColor(R.color.black));
+                informationBtn.setTextColor(getResources().getColor(R.color.black));
             }
         });
         informationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                textView.setText(R.string.information_text);
+                meBtn.setTextColor(getResources().getColor(R.color.black));
+                twoDegreeBtn.setTextColor(getResources().getColor(R.color.black));
+                dynamicBtn.setTextColor(getResources().getColor(R.color.black));
+                informationBtn.setTextColor(getResources().getColor(R.color.blue));
             }
         });
 
