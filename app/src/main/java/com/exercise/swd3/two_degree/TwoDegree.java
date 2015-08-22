@@ -109,7 +109,7 @@ public class TwoDegree extends ActionBarActivity {
                 System.out.println(names[position]
                         + "请点击我");
                 startActivity(new Intent(TwoDegree.this, FriendActivity.class));
-                    }
+            }
         });
         list.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 

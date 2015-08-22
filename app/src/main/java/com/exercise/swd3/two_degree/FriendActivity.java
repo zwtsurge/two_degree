@@ -13,7 +13,7 @@ public class FriendActivity extends ActionBarActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_friend_imformation);
+        setContentView(R.layout.activity_friend_information);
     }
 
     @Override
