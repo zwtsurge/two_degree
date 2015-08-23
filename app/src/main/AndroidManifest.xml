@@ -24,6 +24,10 @@
             android:name=".FriendActivity"
             android:label="@string/title_activity_two_degree" >
         </activity>
+        <activity
+            android:name=".MeActivity"
+            android:label="@string/title_activity_me" >
+        </activity>
     </application>
 
 </manifest>
