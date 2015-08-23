@@ -45,11 +45,7 @@ public class TwoDegree extends ActionBarActivity {
         meBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.setText(R.string.me_text);
-                meBtn.setTextColor(getResources().getColor(R.color.blue));
-                twoDegreeBtn.setTextColor(getResources().getColor(R.color.black));
-                dynamicBtn.setTextColor(getResources().getColor(R.color.black));
-                informationBtn.setTextColor(getResources().getColor(R.color.black));
+                startActivity(new Intent(TwoDegree.this, MeActivity.class));
             }
         });
         twoDegreeBtn.setOnClickListener(new View.OnClickListener() {
