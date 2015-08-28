@@ -1,16 +1,16 @@
-package com.exercise.swd3.two_degree;
+package com.exercise.swd3.two_degree.twoDegree;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
+
+import com.exercise.swd3.two_degree.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,66 +18,26 @@ import java.util.List;
 import java.util.Map;
 
 
-public class TwoDegree extends ActionBarActivity {
-    private Button meBtn = null;
-    private Button twoDegreeBtn = null;
-    private Button dynamicBtn = null;
-    private Button informationBtn = null;
-    private TextView textView = null;
+public class TwoDegree extends Activity {
+
     private String[] names = new String[]
             { "leo", "jayson", "surge", "dy"};
     private String[] descs = new String[]
             { "有4个好友认识他", "有3个好友认识他", "有2个好友认识他", "有1个好友认识他"};
     private int[] imageIds = new int[]
             { R.drawable.leo , R.drawable.jayson, R.drawable.surge , R.drawable.dy};
+    private String[] dist = new String[]
+            {"0.25km","0.34km","0.44km","0.58km"};
+    private int[] images = new int[]
+            { R.drawable.d , R.drawable.d ,R.drawable.d ,R.drawable.d };
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_two_degree);
+        setContentView(R.layout.two_degree);
 
-        meBtn = (Button)findViewById(R.id.meBtn);
-        twoDegreeBtn = (Button)findViewById(R.id.two_degreeBtn);
-        dynamicBtn = (Button)findViewById(R.id.dynamicBtn);
-        informationBtn = (Button)findViewById(R.id.informationBtn);
-        textView = (TextView)findViewById(R.id.testView);
-        meBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(TwoDegree.this, MeActivity.class));
-            }
-        });
-        twoDegreeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                textView.setText(R.string.two_degree_text);
-                meBtn.setTextColor(getResources().getColor(R.color.black));
-                twoDegreeBtn.setTextColor(getResources().getColor(R.color.blue));
-                dynamicBtn.setTextColor(getResources().getColor(R.color.black));
-                informationBtn.setTextColor(getResources().getColor(R.color.black));
-            }
-        });
-        dynamicBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                textView.setText(R.string.dynamic_text);
-                dynamicBtn.setTextColor(getResources().getColor(R.color.blue));
-                meBtn.setTextColor(getResources().getColor(R.color.black));
-                twoDegreeBtn.setTextColor(getResources().getColor(R.color.black));
-                informationBtn.setTextColor(getResources().getColor(R.color.black));
-            }
-        });
-        informationBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                textView.setText(R.string.information_text);
-                meBtn.setTextColor(getResources().getColor(R.color.black));
-                twoDegreeBtn.setTextColor(getResources().getColor(R.color.black));
-                dynamicBtn.setTextColor(getResources().getColor(R.color.black));
-                informationBtn.setTextColor(getResources().getColor(R.color.blue));
-            }
-        });
+
         List<Map<String, Object>> listItems =
                 new ArrayList<Map<String, Object>>();
         for (int i = 0; i < names.length; i++)
@@ -86,13 +46,15 @@ public class TwoDegree extends ActionBarActivity {
             listItem.put("header", imageIds[i]);
             listItem.put("personName", names[i]);
             listItem.put("desc", descs[i]);
+            listItem.put("dist", dist[i]);
+            listItem.put("images",images[i]);
             listItems.add(listItem);
         }
 
         SimpleAdapter simpleAdapter = new SimpleAdapter(this, listItems,
                 R.layout.simple_item,
-                new String[] { "personName", "header" , "desc"},
-                new int[] { R.id.name, R.id.header , R.id.desc });
+                new String[] { "personName", "header" , "desc" , "dist" , "images"},
+                new int[] { R.id.name, R.id.header , R.id.desc , R.id.dist , R.id.images});
         ListView list = (ListView) findViewById(R.id.mylist);
 
         list.setAdapter(simpleAdapter);
@@ -104,7 +66,7 @@ public class TwoDegree extends ActionBarActivity {
                                     int position, long id) {
                 System.out.println(names[position]
                         + "请点击我");
-                startActivity(new Intent(TwoDegree.this, FriendActivity.class));
+                startActivity(new Intent(TwoDegree.this, FriendDetailActivity.class));
             }
         });
         list.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

@@ -1,25 +1,26 @@
-package com.exercise.swd3.two_degree;
+package com.exercise.swd3.two_degree.me;
 
-import android.os.Bundle;
+import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-/**
- * Created by swd3 on 8/22/15.
- */
-public class FriendActivity extends ActionBarActivity{
+import com.exercise.swd3.two_degree.R;
+
+
+public class MeActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_friend_information);
+        setContentView(R.layout.me);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_two_degree, menu);
+        getMenuInflater().inflate(R.menu.menu_me, menu);
         return true;
     }
 
@@ -37,5 +38,4 @@ public class FriendActivity extends ActionBarActivity{
 
         return super.onOptionsItemSelected(item);
     }
-
 }

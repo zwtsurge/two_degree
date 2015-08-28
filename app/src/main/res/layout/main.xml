@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@android:id/tabhost"
+    >
+    <!-- 直接使用数组资源给出列表项 -->
+    <!-- 设置使用红色的分隔条 -->
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+        </FrameLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/image13"
+            android:src="@drawable/b"
+            android:layout_marginTop="5dp"/>
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+        </TabWidget>
+
+        <RadioGroup
+            android:id="@+id/main_radiogroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="5dp"
+            android:background="@drawable/e">
+
+            <RadioButton
+                style="@style/tab_button_bg"
+                android:checked="true"
+                android:text="@string/two_degree_button"
+                android:id="@+id/two_degreeBtn"
+                android:layout_weight="1"
+                android:textSize="25dp"
+                android:textColor="@color/tab_text"
+                android:layout_marginBottom="5dp"/>
+
+            <RadioButton
+                style="@style/tab_button_bg"
+                android:text="@string/information_button"
+                android:id="@+id/informationBtn"
+                android:layout_weight="1"
+                android:textSize="25dp"
+                android:textColor="@color/tab_text" />
+
+            <RadioButton
+                style="@style/tab_button_bg"
+                android:text="@string/dynamic_button"
+                android:id="@+id/dynamicBtn"
+                android:layout_weight="1"
+                android:textSize="25dp"
+                android:textColor="@color/tab_text" />
+
+            <RadioButton
+                android:id="@+id/meBtn"
+                style="@style/tab_button_bg"
+                android:text="@string/me_button"
+                android:textSize="25dp"
+                android:layout_weight="1"
+                android:textColor="@color/tab_text" />
+        </RadioGroup>
+    </LinearLayout>
+</TabHost>

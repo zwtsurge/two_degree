@@ -8,7 +8,7 @@
         android:label="two_degree"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,15 +17,27 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TwoDegree"
+            android:name=".twoDegree.TwoDegree"
             android:label="@string/title_activity_two_degree" >
         </activity>
         <activity
-            android:name=".FriendActivity"
+            android:name=".twoDegree.FriendDetailActivity"
             android:label="@string/title_activity_two_degree" >
         </activity>
         <activity
-            android:name=".MeActivity"
+            android:name=".me.MeActivity"
+            android:label="@string/title_activity_me" >
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_me" >
+        </activity>
+        <activity
+            android:name=".dynamic.DynamicActivity"
+            android:label="@string/title_activity_me" >
+        </activity>
+        <activity
+            android:name=".infomation.InformationActivity"
             android:label="@string/title_activity_me" >
         </activity>
     </application>

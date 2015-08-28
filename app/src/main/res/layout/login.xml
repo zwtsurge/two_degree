@@ -35,5 +35,6 @@
         android:text="Log In"
         android:id="@+id/loginBtn"
         android:background="#c9124afc"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.05"/>
 </LinearLayout>
