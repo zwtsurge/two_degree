@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.exercise.swd3.two_degree.me.ChangeSex">
+    tools:context="com.exercise.swd3.two_degree.me.ChangeSexActivity">
 
     <ImageView
         android:layout_width="wrap_content"

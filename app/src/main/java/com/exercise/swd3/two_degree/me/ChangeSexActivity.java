@@ -8,18 +8,18 @@ import android.view.MenuItem;
 
 import com.exercise.swd3.two_degree.R;
 
-public class ChangeAge extends Activity {
+public class ChangeSexActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.change_age);
+        setContentView(R.layout.change_sex);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_change_age, menu);
+        getMenuInflater().inflate(R.menu.menu_change_sex, menu);
         return true;
     }
 

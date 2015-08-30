@@ -2,12 +2,10 @@ package com.exercise.swd3.two_degree.me;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.exercise.swd3.two_degree.R;
@@ -35,28 +33,28 @@ public class MeActivity extends Activity {
         name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MeActivity.this, ChangeName.class));
+                startActivity(new Intent(MeActivity.this, ChangeNameActivity.class));
             }
         });
 
         emotion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MeActivity.this, ChangeEmotion.class));
+                startActivity(new Intent(MeActivity.this, ChangeEmotionActivity.class));
             }
         });
 
         age.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MeActivity.this, ChangeAge.class));
+                startActivity(new Intent(MeActivity.this, ChangeAgeActivity.class));
             }
         });
 
         sex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MeActivity.this, ChangeSex.class));
+                startActivity(new Intent(MeActivity.this, ChangeSexActivity.class));
             }
         });
 

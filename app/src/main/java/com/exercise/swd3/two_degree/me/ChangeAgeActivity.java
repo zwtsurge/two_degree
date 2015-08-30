@@ -8,18 +8,18 @@ import android.view.MenuItem;
 
 import com.exercise.swd3.two_degree.R;
 
-public class ChangeEmotion extends Activity {
+public class ChangeAgeActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.change_emotion);
+        setContentView(R.layout.change_age);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_change_emotion, menu);
+        getMenuInflater().inflate(R.menu.menu_change_age, menu);
         return true;
     }
 

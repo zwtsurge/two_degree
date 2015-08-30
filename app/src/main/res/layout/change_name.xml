@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.exercise.swd3.two_degree.me.ChangeName">
+    tools:context="com.exercise.swd3.two_degree.me.ChangeNameActivity">
 
 
     <ImageView

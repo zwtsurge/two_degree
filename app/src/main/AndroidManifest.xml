@@ -41,19 +41,19 @@
             android:label="@string/title_activity_me" >
         </activity>
         <activity
-            android:name=".me.ChangeName"
+            android:name=".me.ChangeNameActivity"
             android:label="@string/title_activity_change_name" >
         </activity>
         <activity
-            android:name=".me.ChangeEmotion"
+            android:name=".me.ChangeEmotionActivity"
             android:label="@string/title_activity_change_emotion" >
         </activity>
         <activity
-            android:name=".me.ChangeAge"
+            android:name=".me.ChangeAgeActivity"
             android:label="@string/title_activity_change_age" >
         </activity>
         <activity
-            android:name=".me.ChangeSex"
+            android:name=".me.ChangeSexActivity"
             android:label="@string/title_activity_change_sex" >
         </activity>
     </application>
