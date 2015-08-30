@@ -6,6 +6,16 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/information_button"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:background="@drawable/u170"
+        android:gravity="center"  />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:textColor="#FF00FF"
         android:textSize="50dp"
         android:text="hello,I am an infomation module"/>
