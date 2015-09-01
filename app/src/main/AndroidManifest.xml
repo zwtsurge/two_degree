@@ -56,6 +56,10 @@
             android:name=".me.ChangeSexActivity"
             android:label="@string/sex" >
         </activity>
+        <activity
+            android:name=".twoDegree.SendImActivity"
+            android:label="@string/title_activity_two_degree" >
+        </activity>
     </application>
 
 </manifest>
