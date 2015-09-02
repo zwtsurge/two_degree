@@ -5,24 +5,22 @@
     android:orientation="vertical"
     tools:context="com.exercise.swd3.two_degree.me.ChangeSexActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:orientation="horizontal"
-        android:weightSum="3"
         android:background="@drawable/u170">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
             android:text="取消"
             android:textSize="20dp"
-            android:textColor="@color/white"
-            android:gravity="left"
-            android:layout_gravity="center"
-            android:layout_weight="1"/>
+            android:textColor="@color/white"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -30,66 +28,70 @@
             android:text="@string/sex"
             android:textSize="20dp"
             android:textColor="@color/white"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:layout_weight="1"/>
+            android:layout_centerInParent="true"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:text="保存"
             android:textSize="20dp"
-            android:textColor="@color/white"
-            android:gravity="right"
-            android:layout_gravity="center"
-            android:layout_weight="1"/>
+            android:textColor="@color/white"/>
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
-    <ImageView
-        android:layout_width="wrap_content"
+
+    <RadioGroup
+        android:id="@+id/sex"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/b"
-        android:layout_marginTop="10dp"/>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <TextView
+        android:checkedButton="@+id/male"
+        android:orientation="vertical">
+
+        <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="25dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/b"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <RadioButton
+            android:id="@+id/male"
+            android:button="@null"
+            android:drawableRight="@drawable/selector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:text="男"
-            android:textSize="20dp" />
+            android:textSize="20dp"/>
 
-    </LinearLayout>
-
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/b"
-        android:layout_marginTop="10dp"/>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <TextView
+        <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="25dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/b"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <RadioButton
+            android:id="@+id/female"
+            android:button="@null"
+            android:drawableRight="@drawable/selector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:text="女"
-            android:textSize="20dp" />
+            android:textSize="20dp"/>
 
-    </LinearLayout>
-
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/b"
-        android:layout_marginTop="10dp"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/b"
+            android:layout_marginTop="10dp"/>
+    </RadioGroup>
 
 
 
