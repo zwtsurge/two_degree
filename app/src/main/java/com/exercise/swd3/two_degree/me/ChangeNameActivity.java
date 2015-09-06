@@ -1,19 +1,51 @@
 package com.exercise.swd3.two_degree.me;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.exercise.swd3.two_degree.R;
 
 public class ChangeNameActivity extends Activity {
 
+    private EditText nameEditText;
+    private String selectedContent;
+    private TextView saveText,cancelText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.change_name);
+
+        nameEditText = (EditText) findViewById(R.id.nameEditText);
+        saveText = (TextView) findViewById(R.id.save);
+        cancelText = (TextView) findViewById(R.id.cancel);
+
+        selectedContent = nameEditText.getText().toString();
+
+        saveText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.putExtra("name", selectedContent);
+                setResult(1, intent);
+                finish();
+            }
+        });
+
+        cancelText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
     }
 
     @Override
