@@ -49,7 +49,7 @@ public class MainActivity extends TabActivity {
                 case R.id.two_degreeBtn:
                     tabhost.setCurrentTab(0);
                     break;
-                case R.id.informationBtn:
+                case R.id.messageBtn:
                     tabhost.setCurrentTab(1);
                     break;
                 case R.id.dynamicBtn:
