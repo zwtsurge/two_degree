@@ -18,7 +18,7 @@ public class ChangeEmotionActivity extends Activity {
     private RadioGroup radioGroup;
     private RadioButton danshenRadioButton,baomiRadioButton,yihunRadioButton,tongxingRadioButton,lianaiRadioButton;
     private TextView saveText,cancelText;
-    private String selectedContent;
+    private String selectedContent,emotionData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,28 @@ public class ChangeEmotionActivity extends Activity {
         lianaiRadioButton = (RadioButton) findViewById(R.id.lianai);
         saveText = (TextView) findViewById(R.id.save);
         cancelText = (TextView) findViewById(R.id.cancel);
+
+        emotionData = getIntent().getStringExtra("emotionData");
+        if ("单身".equals(emotionData)){
+            danshenRadioButton.setChecked(true);
+            selectedContent = danshenRadioButton.getText().toString();
+        }
+        else if ("保密".equals(emotionData)){
+            baomiRadioButton.setChecked(true);
+            selectedContent = baomiRadioButton.getText().toString();
+        }
+        else if ("已婚".equals(emotionData)){
+            yihunRadioButton.setChecked(true);
+            selectedContent = yihunRadioButton.getText().toString();
+        }
+        else if ("同性".equals(emotionData)){
+            tongxingRadioButton.setChecked(true);
+            selectedContent = tongxingRadioButton.getText().toString();
+        }
+        else if ("恋爱中".equals(emotionData)){
+            lianaiRadioButton.setChecked(true);
+            selectedContent = lianaiRadioButton.getText().toString();
+        }
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

@@ -20,6 +20,7 @@ public class MeActivity extends Activity {
     private LinearLayout age;
     private LinearLayout sex;
     private TextView nameTextView,emotionTextView,ageTextView,sexTextView;
+    private String nameData,emotionData,ageData,sexData;
 
 
     @Override
@@ -40,28 +41,40 @@ public class MeActivity extends Activity {
         name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivityForResult((new Intent(MeActivity.this, ChangeNameActivity.class)),1);
+                Intent sendData = new Intent(MeActivity.this, ChangeNameActivity.class);
+                nameData = nameTextView.getText().toString();
+                sendData.putExtra("nameData",nameData);
+                startActivityForResult(sendData,1);
             }
         });
 
         emotion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivityForResult((new Intent(MeActivity.this, ChangeEmotionActivity.class)),2);
+                Intent sendData = new Intent(MeActivity.this, ChangeEmotionActivity.class);
+                emotionData = emotionTextView.getText().toString();
+                sendData.putExtra("emotionData",emotionData);
+                startActivityForResult(sendData,2);
             }
         });
 
         age.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivityForResult((new Intent(MeActivity.this, ChangeAgeActivity.class)),3);
+                Intent sendData = new Intent(MeActivity.this, ChangeAgeActivity.class);
+                ageData = ageTextView.getText().toString();
+                sendData.putExtra("ageData", ageData);
+                startActivityForResult(sendData,3);
             }
         });
 
         sex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivityForResult((new Intent(MeActivity.this, ChangeSexActivity.class)),4);
+                Intent sendData = new Intent(MeActivity.this, ChangeSexActivity.class);
+                sexData = sexTextView.getText().toString();
+                sendData.putExtra("sexData", sexData);
+                startActivityForResult(sendData,4);
             }
         });
 
@@ -72,19 +85,18 @@ public class MeActivity extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        Intent intent = getIntent();
 
         if (requestCode == 1 && resultCode == 1){
-            nameTextView.setText(intent.getStringExtra("name"));
+            nameTextView.setText(data.getStringExtra("name"));
         }
         else if (requestCode == 2 && resultCode == 2){
-            emotionTextView.setText(intent.getStringExtra("emotion"));
+            emotionTextView.setText(data.getStringExtra("emotion"));
         }
         else if (requestCode == 3 && resultCode == 3){
-            ageTextView.setText(intent.getStringExtra("age"));
+            ageTextView.setText(data.getStringExtra("age"));
         }
         else if (requestCode == 4 && resultCode == 4){
-            sexTextView.setText(intent.getStringExtra("sex"));
+            sexTextView.setText(data.getStringExtra("sex"));
         }
     }
 
