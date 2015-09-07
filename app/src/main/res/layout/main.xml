@@ -53,7 +53,7 @@
             <RadioButton
                 style="@style/tab_button_bg"
                 android:text="@string/information_button"
-                android:id="@+id/informationBtn"
+                android:id="@+id/messageBtn"
                 android:layout_weight="1"
                 android:textSize="25dp"
                 android:textColor="@color/tab_text" />

@@ -37,7 +37,7 @@
             android:label="@string/title_activity_me" >
         </activity>
         <activity
-            android:name=".infomation.InformationActivity"
+            android:name=".message.MessageActivity"
             android:label="@string/title_activity_me" >
         </activity>
         <activity
