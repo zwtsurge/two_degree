@@ -18,7 +18,7 @@ public class ChangeSexActivity extends Activity {
     private RadioGroup radioGroup;
     private RadioButton maleRadioButton,femaleRadioButton;
     private TextView saveText,cancelText;
-    private String selectedContent;
+    private String selectedContent,sexData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,16 @@ public class ChangeSexActivity extends Activity {
         femaleRadioButton = (RadioButton) findViewById(R.id.female);
         saveText = (TextView) findViewById(R.id.save);
         cancelText = (TextView) findViewById(R.id.cancel);
+
+        sexData = getIntent().getStringExtra("sexData");
+        if ("男".equals(sexData)){
+            maleRadioButton.setChecked(true);
+            selectedContent = maleRadioButton.getText().toString();
+        }
+        else {
+            femaleRadioButton.setChecked(true);
+            selectedContent = femaleRadioButton.getText().toString();
+        }
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

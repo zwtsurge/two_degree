@@ -17,6 +17,7 @@ public class ChangeNameActivity extends Activity {
     private EditText nameEditText;
     private String selectedContent;
     private TextView saveText,cancelText;
+    private String nameData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +28,14 @@ public class ChangeNameActivity extends Activity {
         saveText = (TextView) findViewById(R.id.save);
         cancelText = (TextView) findViewById(R.id.cancel);
 
-        selectedContent = nameEditText.getText().toString();
+        nameData = getIntent().getStringExtra("nameData");
+        nameEditText.setText(nameData);
 
         saveText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
+                selectedContent = nameEditText.getText().toString();
                 intent.putExtra("name", selectedContent);
                 setResult(1, intent);
                 finish();
