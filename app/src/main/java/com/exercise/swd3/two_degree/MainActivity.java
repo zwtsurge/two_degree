@@ -8,7 +8,7 @@ import android.widget.RadioGroup;
 import android.widget.TabHost;
 
 import com.exercise.swd3.two_degree.dynamic.DynamicActivity;
-import com.exercise.swd3.two_degree.infomation.InformationActivity;
+import com.exercise.swd3.two_degree.message.MessageActivity;
 import com.exercise.swd3.two_degree.me.MeActivity;
 import com.exercise.swd3.two_degree.twoDegree.TwoDegree;
 
@@ -26,14 +26,14 @@ public class MainActivity extends TabActivity {
         setContentView(R.layout.main);
 
         tab_two_degree = (RadioButton) findViewById(R.id.two_degreeBtn);
-        tab_info = (RadioButton) findViewById(R.id.informationBtn);
+        tab_info = (RadioButton) findViewById(R.id.messageBtn);
         tab_dynamic = (RadioButton) findViewById(R.id.dynamicBtn);
         tab_me = (RadioButton) findViewById(R.id.meBtn);
         main_radiogroup = (RadioGroup) findViewById(R.id.main_radiogroup);
 
         tabhost = this.getTabHost();
         tabhost.addTab(tabhost.newTabSpec("two_degree").setIndicator("twodegree").setContent(new Intent(this,TwoDegree.class)));
-        tabhost.addTab(tabhost.newTabSpec("info").setIndicator("info").setContent(new Intent(this,InformationActivity.class)));
+        tabhost.addTab(tabhost.newTabSpec("info").setIndicator("info").setContent(new Intent(this,MessageActivity.class)));
         tabhost.addTab(tabhost.newTabSpec("dynamic").setIndicator("dynamic").setContent(new Intent(this,DynamicActivity.class)));
         tabhost.addTab(tabhost.newTabSpec("me").setIndicator("me").setContent(new Intent(this, MeActivity.class)));
 
@@ -49,7 +49,7 @@ public class MainActivity extends TabActivity {
                 case R.id.two_degreeBtn:
                     tabhost.setCurrentTab(0);
                     break;
-                case R.id.informationBtn:
+                case R.id.messageBtn:
                     tabhost.setCurrentTab(1);
                     break;
                 case R.id.dynamicBtn:

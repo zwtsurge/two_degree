@@ -17,6 +17,7 @@ public class ChangeAgeActivity extends Activity {
     private EditText ageEditText;
     private String selectedContent;
     private TextView saveText,cancelText;
+    private String ageData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +28,14 @@ public class ChangeAgeActivity extends Activity {
         saveText = (TextView) findViewById(R.id.save);
         cancelText = (TextView) findViewById(R.id.cancel);
 
-        selectedContent = ageEditText.getText().toString();
+        ageData = getIntent().getStringExtra("ageData");
+        ageEditText.setText(ageData);
 
         saveText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
+                selectedContent = ageEditText.getText().toString();
                 intent.putExtra("age", selectedContent);
                 setResult(3, intent);
                 finish();
