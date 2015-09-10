@@ -3,6 +3,7 @@ package com.exercise.swd3.two_degree;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TabHost;
@@ -19,6 +20,7 @@ public class MainActivity extends TabActivity {
     private TabHost tabhost;
     private RadioGroup main_radiogroup;
     private RadioButton tab_two_degree, tab_info, tab_dynamic,tab_me;
+    private int flag = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +35,32 @@ public class MainActivity extends TabActivity {
 
         tabhost = this.getTabHost();
         tabhost.addTab(tabhost.newTabSpec("two_degree").setIndicator("twodegree").setContent(new Intent(this,TwoDegree.class)));
-        tabhost.addTab(tabhost.newTabSpec("info").setIndicator("info").setContent(new Intent(this,MessageActivity.class)));
-        tabhost.addTab(tabhost.newTabSpec("dynamic").setIndicator("dynamic").setContent(new Intent(this,DynamicActivity.class)));
+        tabhost.addTab(tabhost.newTabSpec("message").setIndicator("message").setContent(new Intent(this, MessageActivity.class)));
+        tabhost.addTab(tabhost.newTabSpec("dynamic").setIndicator("dynamic").setContent(new Intent(this, DynamicActivity.class)));
         tabhost.addTab(tabhost.newTabSpec("me").setIndicator("me").setContent(new Intent(this, MeActivity.class)));
 
         CheckListener checkradio = new CheckListener();
         main_radiogroup.setOnCheckedChangeListener(checkradio);
-        tabhost.setCurrentTab(0);
+        Intent intent = getIntent();
+        if(intent != null){
+            flag=intent.getIntExtra("flag",0);
+        }
+        changeStyle(flag);
+        tabhost.setCurrentTab(flag);
+        Log.d("dingyuan","oncreate:"+flag);
+    }
+    public void changeStyle(Integer flag){
+        switch (flag){
+            case 0 : tab_two_degree.setChecked(true);
+                break;
+            case 1 : tab_info.setChecked(true);
+                break;
+            case 2 : tab_dynamic.setChecked(true);
+                break;
+            case 3 : tab_me.setChecked(true);
+                break;
+        }
+
     }
     public class CheckListener implements RadioGroup.OnCheckedChangeListener {
         @Override
@@ -59,7 +80,6 @@ public class MainActivity extends TabActivity {
                     tabhost.setCurrentTab(3);
                     break;
             }
-
 
         }
     }

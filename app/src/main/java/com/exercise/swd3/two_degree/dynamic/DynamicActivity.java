@@ -17,19 +17,24 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 /**
  * Created by swd3 on 8/27/15.
  */
 public class DynamicActivity extends Activity {
     private int[] Images = new int[]
-            { R.drawable.a , R.drawable.a ,R.drawable.a ,R.drawable.a};
+            { R.drawable.u22 , R.drawable.u22 ,R.drawable.u22 ,R.drawable.u22};
     private String[] names = new String[]
-            { "leo", "jayson", "surge", "dy"};
+            { "leo", "jayson", "surge", "dy",};
     private String[] substance = new String[]
-            { "听到一句很装逼的话：你，就是你的命运。", "人生总有好运气，飘扬过海来看你。", "我倒要看看，任何事我拼尽全力去做会怎样。","总有人要成功，为什么不可以是我。我就是要做最出色最好的那一个，得到大家的认同。"};
+            { "听到一句很装逼的话：你，就是你的命运。", "", "我倒要看看，任何事我拼尽全力去做会怎样。","总有人要成功，为什么不可以是我。我就是要做最出色最好的那一个，得到大家的认同。"};
     private String[] times = new String[]
             {"3分钟前" , "7分钟前" , "12分钟前" ,"15分钟前" };
+    private int[] ImageA = new int[]
+            {R.drawable.u4 , 0 , 0 , R.drawable.u4};
+    private int[] ImageB = new int[]
+            {0 , R.drawable.u4 , 0, R.drawable.u4};
+    private int[] ImageC = new int[]
+            {R.drawable.u4 , 0 , 0 , R.drawable.u4};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,13 +48,16 @@ public class DynamicActivity extends Activity {
             listItem.put("subs", substance[i]);
             listItem.put("time", times[i]);
             listItem.put("images",Images[i]);
+            listItem.put("photo1",ImageA[i]);
+            listItem.put("photo2",ImageB[i]);
+            listItem.put("photo3",ImageC[i]);
             listItems.add(listItem);
         }
 
         SimpleAdapter simpleAdapter = new SimpleAdapter(this, listItems,
                 R.layout.dynamic_listview,
-                new String[] { "personName", "subs" , "time" , "images"},
-                new int[] { R.id.name , R.id.subs , R.id.time, R.id.images});
+                new String[] { "personName", "subs" , "time" , "images" , "photo1" , "photo2" , "photo3"},
+                new int[] { R.id.name , R.id.subs , R.id.time, R.id.images,R.id.imageA,R.id.imageB,R.id.imageC});
         ListView list = (ListView) findViewById(R.id.dynamiclist);
 
         list.setAdapter(simpleAdapter);
