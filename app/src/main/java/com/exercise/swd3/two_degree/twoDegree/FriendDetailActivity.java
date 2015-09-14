@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.exercise.swd3.two_degree.MainActivity;
 import com.exercise.swd3.two_degree.R;
+import com.exercise.swd3.two_degree.message.SendMessActivity;
 
 /**
  * Created by swd3 on 8/22/15.
@@ -22,11 +23,18 @@ public class FriendDetailActivity extends Activity {
         findViewById(R.id.sendBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(FriendDetailActivity.this, SendImActivity.class));
+                startActivity(new Intent(FriendDetailActivity.this, SendMessActivity.class));
+            }
+        });
+        findViewById(R.id.callback).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FriendDetailActivity.this.finish();
             }
         });
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

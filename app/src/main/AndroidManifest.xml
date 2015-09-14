@@ -37,7 +37,7 @@
             android:label="@string/title_activity_me" >
         </activity>
         <activity
-            android:name=".infomation.InformationActivity"
+            android:name=".message.MessageActivity"
             android:label="@string/title_activity_me" >
         </activity>
         <activity
@@ -57,9 +57,11 @@
             android:label="@string/sex" >
         </activity>
         <activity
-            android:name=".twoDegree.SendImActivity"
+            android:name=".message.SendMessActivity"
             android:label="@string/title_activity_two_degree" >
         </activity>
     </application>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
 </manifest>
